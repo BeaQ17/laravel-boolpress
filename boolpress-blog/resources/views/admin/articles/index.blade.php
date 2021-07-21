@@ -17,6 +17,7 @@
                   <h4>View | Edit | Delete</h4>
                 </div>
               </div>
+              <hr>
         </div>
         
     @endforeach
