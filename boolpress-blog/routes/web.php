@@ -17,6 +17,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::resource("articles", ArticleController::class)->only(["index", "show"]);
+
 Auth::routes();
 
 //Route::get('/home', 'Admin\HomeController@index')->name('home');
