@@ -18,7 +18,7 @@ class ArticleSeeder extends Seeder
             $article->title = $faker->words(4, true);
             $article->subtitle = $faker->sentence();
             $article->date = $faker->dateTimeInInterval('-2 years', '+1 days');
-            $article->author = $faker->firstName($gender = null|'male'|'female');
+            $article->author = $faker->lastName();
             $article->five_w = $faker->words(2, true);
             $article->how_text = $faker->paragraphs(6, true);
             $article->save();
