@@ -22,7 +22,7 @@
 <body>
 
      <!-- HEADER -->
-    @include('partials.header')
+     @include('layouts.partials.header')
     
     <!-- MAIN -->
     <main id="site_main">
@@ -30,7 +30,8 @@
     </main>
     
     <!-- FOOTER -->
-    @include('partials.footer')
+    @include('layouts.partials.footer')
+    
    
 </body>
 </html>
