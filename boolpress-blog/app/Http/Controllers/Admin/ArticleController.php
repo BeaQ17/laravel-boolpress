@@ -70,7 +70,7 @@ class ArticleController extends Controller
      */
     public function edit(Article $article)
     {
-        //
+        return view("admin.articles.edit", compact("article"));
     }
 
     /**
@@ -82,7 +82,16 @@ class ArticleController extends Controller
      */
     public function update(Request $request, Article $article)
     {
-        //
+        $validateData = $request->validate([
+            "title" => "required | min:5 | max:255",
+            "subtitle" => "nullable | max:255",
+            "date" => "required",
+            "author" => "required",
+            "five_w" => "required | min:5 | max:255",
+            "how_text" => "required | min:255"
+        ]);
+        $article->update($validateData);
+        return redirect()->route('admin.articles.index');
     }
 
     /**
@@ -93,6 +102,7 @@ class ArticleController extends Controller
      */
     public function destroy(Article $article)
     {
-        //
+        $article->delete();
+        return redirect()->route('admin.articles.index');
     }
 }
