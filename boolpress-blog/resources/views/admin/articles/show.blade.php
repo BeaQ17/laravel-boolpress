@@ -2,10 +2,17 @@
 
 @section("content")
 
-<div class="card">
+<div class="container">
     <h1>{{$article->title}}</h1>
     <h3>{{$article->subtitle}}</h3>
-    <p>etc</p>
+    <hr>
+    <p>{{$article->date}} - {{$article->author}}</p>
+    <hr>
+    <p>{{$article->five_w}}</p>
+    <hr>
+    <p>{{$article->how_text}}</p>
 </div>
+
+<button href="{{route("admin.articles.index")}}">Back to all articles</button>
 
 @endsection

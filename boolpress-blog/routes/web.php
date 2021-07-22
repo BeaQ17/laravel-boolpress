@@ -17,15 +17,19 @@ Route::get('/', function () {
     return view('admin.home');
 });
 
-Route::resource("articles", ArticleController::class)->only(["index", "show"]);
+//Route::resource("articles", ArticleController::class)->only(["index", "show"]);
 
-Auth::routes();
+
+Route::get('articles', 'ArticleController@index')->name('articles.index');
+Route::get('articles/{article}', 'ArticleController@show')->name('articles.show');
+
+Auth::routes(["register" => false]);
 
 //Route::get('/home', 'Admin\HomeController@index')->name('home');
 //Route::resource("articles", Admin\ArticleController::class);
 
 
-Route::middleware("auth")->prefix("admin")->namespace("Admin")->name("admin.")->group(function(){
-    Route::get('/', 'HomeController@index')->name('index');
+Route::prefix("admin")->middleware("auth")->namespace("Admin")->name("admin.")->group(function(){
+    Route::get('/', 'HomeController@index')->name('dashboard'); //->admin dash
     Route::resource("articles", ArticleController::class);
 });
