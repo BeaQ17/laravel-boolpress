@@ -26,7 +26,7 @@ class ArticleController extends Controller
      */
     public function create()
     {
-        //
+        return view("admin.articles.create");
     }
 
     /**
@@ -40,6 +40,8 @@ class ArticleController extends Controller
         $validateData = $request->validate([
             "title" => "required | min:5 | max:255",
             "subtitle" => "nullable | max:255",
+            "date" => "required",
+            "author" => "required",
             "five_w" => "required | min:5 | max:255",
             "how_text" => "required | min:255"
         ]);
