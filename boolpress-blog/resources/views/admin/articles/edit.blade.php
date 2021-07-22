@@ -3,7 +3,7 @@
 @section("content")
 <div class="card">
     <h1>Edit article</h1>
-    <form action="{{route("admin.articles.update")}}" method="post">
+    <form action="{{route("admin.articles.update", $article->id)}}" method="post">
     @csrf
     @method("PUT")
         <div class="form-group">
