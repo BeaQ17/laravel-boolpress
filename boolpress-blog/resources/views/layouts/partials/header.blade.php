@@ -7,7 +7,7 @@
       <div class="collapse navbar-collapse" id="navbarsExample07">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link active" aria-current="page" href="{{route("admin.articles.index")}}">Dashboard</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">News</a>
@@ -20,12 +20,6 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Arts & Culture</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Local Initiatives</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#" tabindex="-1">Contests</a>
           </li>
         </ul>
         <form>
@@ -69,6 +63,8 @@
   </nav>
 </header>
 
+<!--
+
 <div class="col-md-4">
   <div class="position-sticky" style="top: 2rem;">
     <div class="p-4 mb-3 bg-light rounded">
@@ -97,6 +93,7 @@
       </ol>
     </div>
 
+    
     <div class="p-4">
       <h4 class="fst-italic">Find Me</h4>
       <ol class="list-unstyled">
@@ -106,6 +103,8 @@
         <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
       </ol>
     </div>
+  -->
+
   </div>
 </div>
 

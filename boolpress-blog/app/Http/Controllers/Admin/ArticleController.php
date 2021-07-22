@@ -37,7 +37,14 @@ class ArticleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validateData = $request->validate([
+            "title" => "required | min:5 | max:255",
+            "subtitle" => "nullable | max:255",
+            "five_w" => "required | min:5 | max:255",
+            "how_text" => "required | min:255"
+        ]);
+        Article::create($validateData);
+        return redirect()->route("admin.articles.index");
     }
 
     /**
@@ -48,7 +55,9 @@ class ArticleController extends Controller
      */
     public function show(Article $article)
     {
-        //
+        {
+            return view("admin.articles.show", compact("article"));
+        }
     }
 
     /**

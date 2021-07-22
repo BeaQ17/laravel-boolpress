@@ -14,7 +14,11 @@
                     <p>{{$article->date}}</p>
                 </div>
                 <div class="col-3">
-                  <h4>View | Edit | Delete</h4>
+                  <h4>
+                    <a href="{{route("admin.articles.show", $article->id)}}"><i class="far fa-eye"></i></a>  | 
+                    <a href="{{route("admin.articles.edit", $article->id)}}"><i class="far fa-edit"></i></a> | 
+                    <a href="{{route("admin.articles.destroy", $article->id)}}"><i class="far fa-trash-alt"></i></a>
+                  </h4>
                 </div>
               </div>
               <hr>
