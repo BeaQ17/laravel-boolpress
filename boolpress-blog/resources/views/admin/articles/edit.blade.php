@@ -1,7 +1,7 @@
 @extends("layouts.admin")
 
 @section("content")
-<div class="card">
+<div class="container">
     <h1>Edit article</h1>
     <form action="{{route("admin.articles.update", $article->id)}}" method="post">
     @csrf

@@ -42,9 +42,16 @@ class ArticleController extends Controller
             "subtitle" => "nullable | max:255",
             "date" => "required",
             "author" => "required",
-            "five_w" => "required | min:5 | max:255",
-            "how_text" => "required | min:255"
+            "image" => 'nullable | image | max:50',
+            "text" => "required | min:255"
         ]);
+
+        if($request->hasFile('image')){
+            $file_path = Storage::put('article_images', $validateData['image']);
+            //ddd($file_path);
+            $validateData['image'] = $file_path;
+        }
+
         Article::create($validateData);
         return redirect()->route("admin.articles.index");
     }
@@ -87,9 +94,16 @@ class ArticleController extends Controller
             "subtitle" => "nullable | max:255",
             "date" => "required",
             "author" => "required",
-            "five_w" => "required | min:5 | max:255",
-            "how_text" => "required | min:255"
+            "image" => 'nullable | image | max:50',
+            "text" => "required | min:255"
         ]);
+
+        if(array_key_exists('image', $validateData)) {
+            $file_path = Storage::put('article_images', $validateData['image']);
+            //ddd($file_path);
+            $validateData['image'] = $file_path;
+        }
+
         $article->update($validateData);
         return redirect()->route('admin.articles.index');
     }

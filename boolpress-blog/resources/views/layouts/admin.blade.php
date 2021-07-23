@@ -32,7 +32,7 @@
 
     <!-- MAIN -->
     @include('layouts.partials.main')
-    <div class="py-4">
+    <div class="col-sm-9">
         @yield('content')
     </div>
 
