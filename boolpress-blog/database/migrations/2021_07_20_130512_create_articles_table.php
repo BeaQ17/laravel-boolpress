@@ -19,8 +19,8 @@ class CreateArticlesTable extends Migration
             $table->string("subtitle");
             $table->string("date");
             $table->string("author");
-            $table->string("five_w");
-            $table->string("how_text");
+            $table->string("image");
+            $table->string("text");
             $table->timestamps();
         });
     }

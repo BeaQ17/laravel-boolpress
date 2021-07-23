@@ -15,12 +15,12 @@ class ArticleSeeder extends Seeder
     {
         for ($i=0; $i < 10; $i++) { 
             $article = new Article();
-            $article->title = $faker->words(4, true);
+            $article->title = $faker->sentence(5);
             $article->subtitle = $faker->sentence();
             $article->date = $faker->dateTimeInInterval('-2 years', '+1 days');
             $article->author = $faker->lastName();
-            $article->five_w = $faker->words(2, true);
-            $article->how_text = $faker->paragraphs(6, true);
+            $post->image = $faker->imageUrl(600, 300, 'Posts', true, $post->title);
+            $article->text = $faker->paragraphs(7, true);
             $article->save();
         }
     }
