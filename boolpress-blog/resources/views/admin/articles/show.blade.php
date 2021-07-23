@@ -13,6 +13,6 @@
     <p>{{$article->how_text}}</p>
 </div>
 
-<button href="{{route("admin.articles.index")}}">Back to all articles</button>
+<button btn btn-outline-primary><a href="{{route("admin.articles.index")}}">Back to all articles</a></button>
 
 @endsection

@@ -5,7 +5,7 @@
 
 <div class="container">
   <div class="new">
-    <button class="btn btn-primary" href="{{route('admin.articles.create')}}">Write new post</button>
+    <button class="btn btn-outline-primary"><a href="{{route('admin.articles.create')}}">Write new post</a></button>
   </div>
 
   @foreach ($articles as $article)
