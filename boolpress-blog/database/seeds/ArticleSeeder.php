@@ -19,7 +19,7 @@ class ArticleSeeder extends Seeder
             $article->subtitle = $faker->sentence();
             $article->date = $faker->dateTimeInInterval('-2 years', '+1 days');
             $article->author = $faker->lastName();
-            $post->image = $faker->imageUrl(600, 300, 'Posts', true, $post->title);
+            $article->image = $faker->imageUrl(600, 300, 'Articles', true, $article->title);
             $article->text = $faker->paragraphs(7, true);
             $article->save();
         }
