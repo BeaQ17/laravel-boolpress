@@ -27,7 +27,7 @@ Route::get('/', function () {
 Route::get('articles', 'ArticleController@index')->name('articles.index');
 Route::get('articles/{article}', 'ArticleController@show')->name('articles.show');
 
-Auth::routes(["register" => false]);
+Auth::routes();
 
 //Route::get('/home', 'Admin\HomeController@index')->name('home');
 //Route::resource("articles", Admin\ArticleController::class);

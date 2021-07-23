@@ -31,12 +31,13 @@
      @include('layouts.partials.header')
     
     <!-- MAIN -->
-    <main id="site_main">
+    @include('layouts.partials.main')
+    <div class="col-sm-9">
         @yield('content')
-    </main>
+    </div>
     
     <!-- FOOTER -->
-    @include('layouts.partials.footer')
+    
     
    
 </body>

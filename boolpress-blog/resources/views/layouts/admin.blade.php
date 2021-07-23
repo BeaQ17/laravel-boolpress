@@ -31,12 +31,13 @@
     
 
     <!-- MAIN -->
-    <main class="py-4">
+    @include('layouts.partials.main')
+    <div class="py-4">
         @yield('content')
-    </main>
+    </div>
 
     <!-- FOOTER -->
-    @include('layouts.partials.footer')
+    
 
 </body>
 </html>

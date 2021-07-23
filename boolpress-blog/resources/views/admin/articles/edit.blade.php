@@ -11,12 +11,10 @@
             <!-- title -->
             <label for="title">Title</label>
             <input type="text" name="title" id="title" class="form-control" placeholder="Write a title" aria-describedby="titleHelper" value="{{$article->title}}" required minlength="5" maxlength="255">
-            <small id="titleHelper" class="text-muted">Keep it small, max 255 characters</small>
 
             <!-- Subtitle -->
-            <label for="title">Subtitle</label>
+            <label for="subtitle">Subtitle</label>
             <input type="text" name="subtitle" id="subtitle" class="form-control" placeholder="Write a subtitle" aria-describedby="titleHelper" value="{{$article->subtitle}}" maxlength="255">
-            <small id="titleHelper" class="text-muted">Keep it small, max 255 characters</small>
 
             <!-- Date -->
             <label for="date">Date</label>
@@ -26,14 +24,14 @@
             <label for="author">Author</label>
             <input type="text" name="author" id="author" class="form-control" placeholder="Who takes credit for this?" aria-describedby="titleHelper" value="{{$article->author}}" required>
 
-            <!-- five w -->
-            <label for="title">Five Ws</label>
-            <input type="text" name="five_w" id="five_w" class="form-control" placeholder="Write the five Ws" aria-describedby="titleHelper" value="{{$article->five_w}}" required minlength="5">
-            <small id="titleHelper" class="text-muted">When, Where, Who, What, Why - try two/three words each</small>
+            <!-- image -->
+            <label for="image">Replace image</label>
+            <img src="{{asset('storage/' . $article->image)}}" alt="">
+            <input type="file" name="image" id="image">
 
             <!-- text -->
             <label for="title">Text</label>
-            <input type="textarea" name="how_text" id="how_text" class="form-control" placeholder="Write the article" aria-describedby="titleHelper" value="{{$article->how_text}}" required minlength="255">
+            <textarea class="form-control" name="text" id="text" placeholder="Write the article" rows="5">{{$article->text}}</textarea>
         </div>
 
         <button type="submit" class="btn btn-success">Done</button>
