@@ -32,11 +32,12 @@
 
     <!-- MAIN -->
     @include('layouts.partials.main')
-    <div class="col-sm-9">
+    <div>
         @yield('content')
     </div>
 
     <!-- FOOTER -->
+    @include('layouts.partials.footer')
     
 
 </body>

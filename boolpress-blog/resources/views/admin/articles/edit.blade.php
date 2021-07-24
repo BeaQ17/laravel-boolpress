@@ -26,7 +26,7 @@
 
             <!-- image -->
             <label for="image">Replace image</label>
-            <img src="{{asset('storage/' . $article->image)}}" alt="">
+            <img src="{{asset('storage/' . $article->image)}}" alt="{{$article->title}}">
             <input type="file" name="image" id="image">
 
             <!-- text -->

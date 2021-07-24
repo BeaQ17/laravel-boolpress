@@ -27,18 +27,18 @@
 </head>
 <body>
 
-     <!-- HEADER -->
-     @include('layouts.partials.header')
-    
+    <!-- HEADER -->
+    @include("layouts.partials.header")
+
     <!-- MAIN -->
-    @include('layouts.partials.main')
-    <div class="col-sm-9">
-        @yield('content')
+    @include("layouts.partials.main")
+    <div>
+        @yield("content")
     </div>
-    
+
+
     <!-- FOOTER -->
-    
-    
+    @include("layouts.partials.footer")
    
 </body>
 </html>

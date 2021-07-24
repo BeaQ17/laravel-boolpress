@@ -8,11 +8,11 @@
     <hr>
     <p>{{$article->date}} - {{$article->author}}</p>
     <hr>
-    <p>{{$article->five_w}}</p>
+    <img src="{{asset('storage/' . $article->image)}}" alt="{{$article->title}}">
     <hr>
-    <p>{{$article->how_text}}</p>
+    <p>{{$article->text}}</p>
 </div>
 
-<button btn btn-outline-primary><a href="{{route("admin.articles.index")}}">Back to all articles</a></button>
+<button class="btn btn-outline-secondary"><a href="{{route("admin.articles.index")}}">Back to all articles</a></button>
 
 @endsection
