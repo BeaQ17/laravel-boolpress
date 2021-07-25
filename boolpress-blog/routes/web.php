@@ -20,6 +20,10 @@ Route::get('/', function () {
 //Route::resource("articles", ArticleController::class)->only(["index", "show"]);
 
 //Altre pagine, senza modello
+Route::get("/", "PageController@index")->name("home");
+Route::get("about", "PageController@about")->name("about");
+
+//Con modello Contact
 
 
 
