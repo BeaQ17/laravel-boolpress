@@ -48,17 +48,22 @@ class ArticleController extends Controller
         ]);
 
         
-        if($request->hasFile('image')){
-            $file_path = Storage::put('article_images', $validateData['image']);
+        if($request->hasFile("image")){
+            $file_path = Storage::put("article_images", $validateData["image"]);
             //ddd($file_path);
-            $validateData['image'] = $file_path;
+            $validateData["image"] = $file_path;
         }
 
+        /*
         $image = Storage::disk("public")->put("articles_img", $request->cover);
         $validateData["image"] = $image;
 
         $article = Article::create($validateData);
         return redirect()->route("admin.articles.index", $article->id);
+        */
+
+        Article::create($validateData);
+        return redirect()->route("admin.articles.index");
     }
 
     /**
