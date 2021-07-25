@@ -24,7 +24,8 @@ Route::get("/", "PageController@index")->name("home");
 Route::get("about", "PageController@about")->name("about");
 
 //Con modello Contact
-
+Route::get("contacts", "ContactController@form")->name("contacts");
+Route::post("contacts", "ContactController@StoreAndSend")->name("contacts.send");
 
 
 //Articles per utente guest
