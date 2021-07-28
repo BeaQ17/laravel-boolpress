@@ -3,6 +3,18 @@
 @section("content")
 
 <div class="container">
+
+    <p>Category</p>
+    @if ($article->category)
+    <a href="{{route("categories.show", $article->category->slug)}}">
+        {{$article->category->name}}
+    </a>
+    @else
+    Uncategorized
+    @endif
+
+    <hr>
+
     <h1>{{$article->title}}</h1>
     <h3>{{$article->subtitle}}</h3>
     <hr>
