@@ -34,6 +34,17 @@
             <textarea class="form-control" name="text" id="text" placeholder="Write the article" rows="5">{{$article->text}}</textarea>
         </div>
 
+        <!-- categories -->
+        <div class="form-group">
+            <label for="category_id">Category</label>
+            <select class="form-control" name="category_id" id="category_id">
+                <option value="">Choose a category</option>
+                @foreach ($categories as $category)
+                <option value="{{$category->id}}" {{$category->id === old("category_id", $post->category_id) ? "selected" : ""}}>{{$category->name}}</option>
+                @endforeach
+            </select>
+        </div>
+
         <button type="submit" class="btn btn-success">Done</button>
     
     </form>
