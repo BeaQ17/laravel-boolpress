@@ -6,6 +6,7 @@ use App\Article;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use App\Category;
 
 class ArticleController extends Controller
 {
@@ -28,6 +29,7 @@ class ArticleController extends Controller
     public function create()
     {
         return view("admin.articles.create");
+        $categories = Category::all();
     }
 
     /**
@@ -44,7 +46,8 @@ class ArticleController extends Controller
             "date" => "required",
             "author" => "required",
             "image" => 'nullable | image | max:100',
-            "text" => "required | min:255"
+            "text" => "required",
+            "category" => "nullable | exists:categories, id"
         ]);
 
         
@@ -88,6 +91,7 @@ class ArticleController extends Controller
     public function edit(Article $article)
     {
         return view("admin.articles.edit", compact("article"));
+        $categories = Category::all();
     }
 
     /**
@@ -105,13 +109,15 @@ class ArticleController extends Controller
             "date" => "required",
             "author" => "required",
             "image" => 'nullable | image | max:50',
-            "text" => "required | min:255"
+            "text" => "required | min:255",
+            "category" => "nullable | exists:categories, id"
+
         ]);
 
-        if(array_key_exists('image', $validateData)) {
-            $file_path = Storage::put('article_images', $validateData['image']);
+        if(array_key_exists("image", $validateData)) {
+            $file_path = Storage::put("article_images", $validateData["image"]);
             //ddd($file_path);
-            $validateData['image'] = $file_path;
+            $validateData["image"] = $file_path;
         }
 
         $article->update($validateData);
