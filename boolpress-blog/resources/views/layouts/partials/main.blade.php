@@ -8,7 +8,7 @@
                 <a class="nav-link {{Route::currentRouteName() === 'admin.articles.index' ? 'active' : ''}}" href="{{ route('admin.articles.index')}}">Articles</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Contacts</a>
+                <a class="nav-link" href="{{route("contacts")}}">Contacts</a>
             </li>
         </ul>
     </aside>
