@@ -32,6 +32,9 @@ Route::post("contacts", "ContactController@StoreAndSend")->name("contacts.send")
 Route::get('articles', 'ArticleController@index')->name('articles.index');
 Route::get('articles/{article}', 'ArticleController@show')->name('articles.show');
 
+//categorie
+Route::get("categories/{category:slug}", "CategoryController@show")->name("categories.show");
+
 Auth::routes();
 
 //Route::get('/home', 'Admin\HomeController@index')->name('home');
