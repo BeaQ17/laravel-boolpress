@@ -20,7 +20,7 @@
     <hr>
     <p>{{$article->date}} - {{$article->author}}</p>
     <hr>
-    <p>{{$article->image}}</p>
+    <img src="{{asset("storage/" . $article->image)}}" alt="{{$article->title}}">
     <hr>
     <p>{{$article->text}}</p>
 
