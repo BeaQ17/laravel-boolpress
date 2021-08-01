@@ -9,7 +9,18 @@ class ArticleController extends Controller
 {
     public function index()
     {
-        $articles = Article::with(["tags"])->paginate();
+       /* 
+       //Senza risorsa
+       $articles = Article::with(["tags"])->paginate();
         return $articles;
+
+        //Con risorsa senza relazioni
+        return ArticleResource::collection(Article::all());
+
+        */
+
+        //Con risorsa e relazioni
+        return ArticleResource::collection(Article::with(["category", "tags"])->paginate());
+
     }
 }

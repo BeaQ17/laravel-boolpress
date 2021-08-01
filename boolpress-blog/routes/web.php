@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Resources\ArticleResource;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,4 +45,10 @@ Auth::routes();
 Route::prefix("admin")->middleware("auth")->namespace("Admin")->name("admin.")->group(function(){
     Route::get('/', 'HomeController@index')->name('dashboard'); //->admin dash
     Route::resource("articles", ArticleController::class);
+});
+
+
+//Article resource
+Route::get('articles/{article}', function (Article $article) {
+    return new ArticleResource(Article::find($article));
 });
