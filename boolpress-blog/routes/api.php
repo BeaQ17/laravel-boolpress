@@ -17,3 +17,13 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+
+Route::get("post", function () {
+    $articles = Article::all(); 
+    return response()->json([
+        "response" => $articles
+    ]);
+});
+
+Route::get("articles", "API\ArticleController@index");
